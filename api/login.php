@@ -4,7 +4,27 @@ $acc = '16257381042';  //手机号
 $pass = 'zxc123456';  //密码
 $apikey = ''; //设置接口密钥，防止恶意请求
 //////////////////////////////////////
+function  uuid()  
 
+{  
+
+$chars = md5(uniqid(mt_rand(), true));  
+
+$uuid = substr ( $chars, 0, 8 ) . '-'
+
+. substr ( $chars, 8, 4 ) . '-' 
+
+. substr ( $chars, 12, 4 ) . '-'
+
+. substr ( $chars, 16, 4 ) . '-'
+
+. substr ( $chars, 20, 12 );  
+
+    return $uuid ;  
+
+}  
+
+$uuid =  uuid();
 //判断用户信息是否为空
 if(empty($acc) or empty($pass)){exit("手机号或密码为空，请打开login.php编辑相关信息!");}
 //判断apikey是否正确
@@ -12,7 +32,7 @@ if($apikey!=htmlspecialchars($_GET['apikey'])){exit("ApiKey错误！");}
 
 //登录获取用户信息
 $pass = md5($pass);  //MD5加密用户密码
-$u = json_decode(HttpPost("http://floor.huluxia.com/account/login/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=&device_code=000000000000000-0000-0000-0000-000000000000","account=".$acc."&login_type=2&password=".$pass));
+$u = json_decode(HttpPost("http://floor.huluxia.com/account/login/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=&device_code=".$uuid,"account=".$acc."&login_type=2&password=".$pass));
 $ukey = $u->_key; //用户key
 $uid = $u->user->userID;  //用户id
 
