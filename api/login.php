@@ -1,7 +1,7 @@
 <?php
 //////////在此处设置账号信息//////////
-$acc = '16257381042';  //手机号
-$pass = 'zxc123456';  //密码
+// $acc = '16257381042';  //手机号
+// $pass = 'zxc123456';  //密码
 $acc = $_GET['phone'];  //手机号
 $pass = $_GET['pass'];  //密码
 $apikey = ''; //设置接口密钥，防止恶意请求
@@ -35,6 +35,7 @@ if($apikey!=htmlspecialchars($_GET['apikey'])){exit("ApiKey错误！");}
 //登录获取用户信息
 $pass = md5($pass);  //MD5加密用户密码
 $u = json_decode(HttpPost("http://floor.huluxia.com/account/login/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=&device_code=".$uuid,"account=".$acc."&login_type=2&password=".$pass));
+var_dump($u);
 $ukey = $u->_key; //用户key
 $uid = $u->user->userID;  //用户id
 
