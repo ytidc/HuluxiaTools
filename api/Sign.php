@@ -4,7 +4,7 @@ $cat_id = $_GET['cat_id'];
 echo '<a href="https://github.com/xiguac/HuluxiaTools">葫芦侠自动签到Api</a>';
 echo "<br \>签到流程开始……<br \>";
 $time1 = time();
-HttpGet("http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=".$ukey."&device_code=".$uuid."&cat_id=".$cat_id);
+echo HttpGet("http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=".$ukey."&device_code=".$uuid."&cat_id=".$cat_id);
 // HttpGet("http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=".$ukey."&device_code=000000000000000-0000-0000-0000-000000000000&cat_id=43");
 // HttpGet("http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=".$ukey."&device_code=000000000000000-0000-0000-0000-000000000000&cat_id=81");
 // HttpGet("http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=".$ukey."&device_code=000000000000000-0000-0000-0000-000000000000&cat_id=16");
