@@ -20,7 +20,9 @@ if($apikey!=htmlspecialchars($_GET['apikey'])){exit("ApiKey错误！");}
 
 //登录获取用户信息
 $pass = md5($pass);  //MD5加密用户密码
-$u = json_decode(HttpPost("http://floor.huluxia.com/account/login/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=&device_code=".$uuid,"account=".$acc."&login_type=2&password=".$pass));
+$text = HttpPost("http://floor.huluxia.com/account/login/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.1.1&versioncode=20141443&market_id=floor_tencent&_key=&device_code=".$uuid,"account=".$acc."&login_type=2&password=".$pass);
+echo $text;
+$u = json_decode($text);
 //var_dump($u);
 echo('用户名称：'.$u->user->nick.'   当前等级：'.$u->user->level);
 $ukey = $u->_key; //用户key
