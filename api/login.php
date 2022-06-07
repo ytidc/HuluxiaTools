@@ -12,21 +12,9 @@ function  uuid()
 
 $chars = md5(uniqid(mt_rand(), true));  
 
-$uuid = substr ( $chars, 0, 8 ) . '-'
+$uuid = $_GET['uuid'];
 
-. substr ( $chars, 8, 4 ) . '-' 
 
-. substr ( $chars, 12, 4 ) . '-'
-
-. substr ( $chars, 16, 4 ) . '-'
-
-. substr ( $chars, 20, 12 );  
-
-    return $uuid ;  
-
-}  
-
-$uuid =  uuid();
 //判断用户信息是否为空
 if(empty($acc) or empty($pass)){exit("手机号或密码为空，请打开login.php编辑相关信息!");}
 //判断apikey是否正确
