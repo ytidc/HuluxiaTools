@@ -6,9 +6,7 @@ $acc = $_GET['phone'];  //手机号
 $pass = $_GET['pass'];  //密码
 $apikey = ''; //设置接口密钥，防止恶意请求
 //////////////////////////////////////
-function  uuid()  
 
-{  
 
 $chars = md5(uniqid(mt_rand(), true));  
 
