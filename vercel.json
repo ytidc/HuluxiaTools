@@ -5,6 +5,7 @@
     }
   },
   "routes": [
-    { "src": "/sign", "dest": "/api/Sign.php" }
+    { "src": "/sign", "dest": "/api/Sign.php" },
+    { "src": "/sendmsg", "dest": "/api/SendMessage.php" }
   ]
 }
