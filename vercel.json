@@ -2,7 +2,10 @@
   "functions": {
     "api/Sign.php": {
       "runtime": "vercel-php@0.4.0"
-    }
+    },
+      "api/SendMessage.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
   },
   "routes": [
     { "src": "/sign", "dest": "/api/Sign.php" },
