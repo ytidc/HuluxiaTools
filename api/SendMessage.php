@@ -1,5 +1,5 @@
 <?php
-include('./login.php');
+include('login.php');
 
 $msg = htmlspecialchars($_GET['msg']);
 $id = htmlspecialchars($_GET['postid']);
